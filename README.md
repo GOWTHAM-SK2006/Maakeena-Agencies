@@ -27,11 +27,15 @@ Open `src/main.jsx` and update:
 ## Current business information used
 
 - Business name: Maakeenaa Agencies
-- Business categories from the supplied listing: Domestic Transporters and Courier Services
-- Locality: Pallapalayam, Coimbatore (Coordinates: 10°59'54.3"N 77°03'45.8"E / 10.998426, 77.062728, Plus Code: X3X7+93H)
-- Listing rating supplied by the user: 4.1 / 5 from 29 ratings (not displayed as a website testimonial)
-
-Exact street address, phone, email, operating hours, routes and pricing are not hard-coded because they have not been confirmed in the project brief.
+- Proprietor: D. Vadivel
+- Partnership: Trusted Logistics Partner — Mahindra Logistics & Rivigo
+- Services: Part Truck Load (PTL), Express Surface, Express Air, Door-to-Door Parcel Delivery & Pickup across 19,000+ Pin Codes
+- Fleet Network: 1,100+ active trucks
+- Address: 407/24, Lineman Thottam, Meenatchiamman Nagar, Ottarpalayam, Coimbatore - 641016
+- GPS Coordinates: 10°59'54.3"N 77°03'45.8"E (10.998426, 77.062728)
+- Phone Numbers: +91 98941 44376 / +91 98946 58961
+- Email: maakaana.agencies@gmail.com
+- Business Hours: Open 24 Hours (24/7)
 
 ## Notes
 
