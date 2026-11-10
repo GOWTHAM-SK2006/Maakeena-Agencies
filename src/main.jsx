@@ -10,8 +10,10 @@ import "./styles.css";
 
 // Add the verified business phone number here in international format.
 // Example: "+919876543210". Leave empty until the owner confirms the number.
-const BUSINESS_PHONE = "";
+const BUSINESS_PHONE = "+919894144376";
+const BUSINESS_PHONE_DISPLAY = "+91 98941 44376";
 const BUSINESS_EMAIL = "maakaana.agencies@gmail.com";
+const BUSINESS_HOURS = "24 Hours (Open 24/7)";
 const BUSINESS_LOCATION = "Pallapalayam, Coimbatore";
 const BUSINESS_COORDINATES = "10.998426,77.062728";
 const PLUS_CODE = "X3X7+93H Pallapalayam, Tamil Nadu";
@@ -19,10 +21,8 @@ const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${BUSINESS_COO
 const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${BUSINESS_COORDINATES}`;
 const MAP_EMBED_URL = `https://www.google.com/maps?q=${BUSINESS_COORDINATES}&hl=en&z=16&output=embed`;
 
-const phoneHref = BUSINESS_PHONE ? `tel:${BUSINESS_PHONE}` : "";
-const whatsappHref = BUSINESS_PHONE
-  ? `https://wa.me/${BUSINESS_PHONE.replace(/\D/g, "")}?text=${encodeURIComponent("Hello Maakeenaa Agencies, I would like to enquire about your transport services.")}`
-  : "";
+const phoneHref = `tel:${BUSINESS_PHONE}`;
+const whatsappHref = `https://wa.me/${BUSINESS_PHONE.replace(/\D/g, "")}?text=${encodeURIComponent("Hello Maakeenaa Agencies, I would like to enquire about your transport services.")}`;
 
 const services = [
   {
@@ -68,7 +68,7 @@ function App() {
       <div className="topbar">
         <div className="container topbar-inner">
           <span><MapPin size={13} /> Pallapalayam, Coimbatore</span>
-          <span className="topbar-right"><span className="status-dot" /> Local transport & courier enquiries</span>
+          <span className="topbar-right"><span className="status-dot" /> 24/7 Available · <a href={phoneHref} style={{ color: "inherit", textDecoration: "none" }}>{BUSINESS_PHONE_DISPLAY}</a></span>
         </div>
       </div>
 
@@ -199,7 +199,7 @@ function App() {
               {[
                 ["What services does Maakeenaa Agencies offer?", "The business is listed under Domestic Transporters and Courier Services. Contact the team to confirm the exact services available."],
                 ["Where is Maakeenaa Agencies located?", "The business is located in Pallapalayam, Coimbatore (Coordinates: 10°59'54.3\"N 77°03'45.8\"E / Plus Code: X3X7+93H). Use the map below for live directions."],
-                ["How can I ask about transport charges?", "Use the contact section to call or message the business once the verified phone number has been added to this website."],
+                ["How can I ask about transport charges?", "Call or WhatsApp us 24/7 on +91 98941 44376 or email maakaana.agencies@gmail.com for instant quotes and delivery details."],
                 ["Which locations and routes are covered?", "Route coverage, delivery timelines and availability have not been confirmed. Please check these details directly with the business."]
               ].map(([q,a],i) => <div className={`faq-item ${faqOpen===i?"faq-active":""}`} key={q}>
                 <button onClick={() => setFaqOpen(faqOpen===i?-1:i)}><span>{q}</span><ChevronDown size={18}/></button>
@@ -216,14 +216,15 @@ function App() {
               <h2>Have goods<br/>to <em>move?</em></h2>
               <p>Tell Maakeenaa Agencies what you need. Contact details can be updated here once confirmed by the business owner.</p>
               <div className="contact-actions">
-                {phoneHref ? <a className="button button-orange" href={phoneHref}><Phone size={17}/> Call the business</a> : <a className="button button-orange" href={`mailto:${BUSINESS_EMAIL}`}><Send size={17}/> Email the business</a>}
-                {whatsappHref ? <a className="button button-outline-light" href={whatsappHref} target="_blank" rel="noreferrer"><Send size={16}/> WhatsApp</a> : <a className="button button-outline-light" href={`mailto:${BUSINESS_EMAIL}`}><Send size={16}/> {BUSINESS_EMAIL}</a>}
+                <a className="button button-orange" href={phoneHref}><Phone size={17}/> Call {BUSINESS_PHONE_DISPLAY}</a>
+                <a className="button button-outline-light" href={whatsappHref} target="_blank" rel="noreferrer"><Send size={16}/> WhatsApp</a>
+                <a className="button button-outline-light" href={`mailto:${BUSINESS_EMAIL}`}><Send size={16}/> Email</a>
               </div>
             </div>
             <div className="contact-details stagger" id="contact-details">
               <div className="contact-detail"><span className="detail-icon"><MapPin size={19}/></span><div><small>VISIT OUR LOCATION</small><strong>Pallapalayam, Coimbatore</strong><span className="detail-muted">Near Bypass Road ({PLUS_CODE})</span><a href={MAPS_URL} target="_blank" rel="noreferrer">Open in Google Maps <ArrowUpRight size={14}/></a></div></div>
-              <div className="contact-detail"><span className="detail-icon"><Phone size={19}/></span><div><small>PHONE</small><strong>{BUSINESS_PHONE || "To be confirmed"}</strong><span className="detail-muted">{BUSINESS_PHONE ? "Call for service enquiries" : "Add the owner's verified business number"}</span></div></div>
-              <div className="contact-detail"><span className="detail-icon"><Clock3 size={19}/></span><div><small>BUSINESS HOURS</small><strong>To be confirmed</strong><span className="detail-muted">Please contact the business before visiting</span></div></div>
+              <div className="contact-detail"><span className="detail-icon"><Phone size={19}/></span><div><small>PHONE</small><strong><a href={phoneHref} style={{ color: "inherit", textDecoration: "none" }}>{BUSINESS_PHONE_DISPLAY}</a></strong><a href={phoneHref}>Call for 24/7 enquiries <ArrowUpRight size={14}/></a></div></div>
+              <div className="contact-detail"><span className="detail-icon"><Clock3 size={19}/></span><div><small>BUSINESS HOURS</small><strong>{BUSINESS_HOURS}</strong><span className="detail-muted">Round-the-clock dispatch & support</span></div></div>
               <div className="contact-detail"><span className="detail-icon"><Send size={19}/></span><div><small>EMAIL</small><strong>{BUSINESS_EMAIL}</strong><a href={`mailto:${BUSINESS_EMAIL}`}>Send an email <ArrowUpRight size={14}/></a></div></div>
             </div>
           </div>
@@ -243,7 +244,7 @@ function App() {
         <div className="container footer-bottom"><span>© {new Date().getFullYear()} Maakeenaa Agencies. All rights reserved.</span><span>Designed for clear connections.</span></div>
       </footer>
 
-      <a className="floating-contact" href={whatsappHref || `mailto:${BUSINESS_EMAIL}`} target={whatsappHref ? "_blank" : undefined} rel={whatsappHref ? "noreferrer" : undefined} aria-label="Contact Maakeenaa Agencies"><Send size={20}/></a>
+      <a className="floating-contact" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Chat with Maakeenaa Agencies on WhatsApp"><Send size={20}/></a>
     </div>
   );
 }
