@@ -21,7 +21,7 @@ npm run preview
 Open `src/main.jsx` and update:
 
 - `BUSINESS_PHONE`: configured as `+919894144376` (+91 98941 44376) for direct calls and WhatsApp.
-- `BUSINESS_EMAIL`: configured as `maakaana.agencies@gmail.com`.
+- `BUSINESS_EMAIL`: configured as `maakeenaa.agencies@gmail.com`.
 - `BUSINESS_HOURS`: Open 24 Hours (24/7).
 
 ## Current business information used
@@ -34,7 +34,7 @@ Open `src/main.jsx` and update:
 - Address: 407/24, Lineman Thottam, Meenatchiamman Nagar, Ottarpalayam, Coimbatore - 641016
 - GPS Coordinates: 10°59'54.3"N 77°03'45.8"E (10.998426, 77.062728)
 - Phone Numbers: +91 98941 44376 / +91 98946 58961
-- Email: maakaana.agencies@gmail.com
+- Email: maakeenaa.agencies@gmail.com
 - Business Hours: Open 24 Hours (24/7)
 
 ## Notes

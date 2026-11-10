@@ -13,7 +13,7 @@ const BUSINESS_PHONE_1 = "+919894144376";
 const BUSINESS_PHONE_1_DISPLAY = "+91 98941 44376";
 const BUSINESS_PHONE_2 = "+919894658961";
 const BUSINESS_PHONE_2_DISPLAY = "+91 98946 58961";
-const BUSINESS_EMAIL = "maakaana.agencies@gmail.com";
+const BUSINESS_EMAIL = "maakeenaa.agencies@gmail.com";
 const BUSINESS_HOURS = "24 Hours (Open 24/7)";
 const FULL_ADDRESS = "407/24, Lineman Thottam, Meenatchiamman Nagar, Ottarpalayam, Coimbatore - 641016";
 const SHORT_ADDRESS = "Ottarpalayam, Coimbatore - 641016";
@@ -218,7 +218,7 @@ function App() {
                 ["What services does Maakeenaa Agencies offer?", "We provide Part Truck Load (PTL), Express Surface, Express Air, parcel pickup, and door-to-door delivery across 19,000+ pin codes across India."],
                 ["Is Maakeenaa Agencies an authorized partner of Mahindra Logistics?", "Yes! Maakeenaa Agencies is an authorized trusted logistics partner of Mahindra Logistics and Rivigo by Mahindra Logistics, backed by an active network of 1,100+ trucks."],
                 ["Where is the office and hub located?", "Our office is at 407/24, Lineman Thottam, Meenatchiamman Nagar, Ottarpalayam, Coimbatore - 641016 (near Sulur Bypass). Live directions are available on the map below."],
-                ["How can I book a shipment or get rate quotes?", "Call or WhatsApp D. Vadivel 24/7 at +91 98941 44376 or +91 98946 58961, or email maakaana.agencies@gmail.com for instant quotes and dispatch."]
+                ["How can I book a shipment or get rate quotes?", "Call or WhatsApp D. Vadivel 24/7 at +91 98941 44376 or +91 98946 58961, or email maakeenaa.agencies@gmail.com for instant quotes and dispatch."]
               ].map(([q,a],i) => <div className={`faq-item ${faqOpen===i?"faq-active":""}`} key={q}>
                 <button onClick={() => setFaqOpen(faqOpen===i?-1:i)}><span>{q}</span><ChevronDown size={18}/></button>
                 <div className="faq-body"><div><p>{a}</p></div></div>
