@@ -21,7 +21,7 @@ npm run preview
 Open `src/main.jsx` and update:
 
 - `BUSINESS_PHONE`: the verified business phone in international format, e.g. `+919876543210`. This enables the Call and WhatsApp actions.
-- `BUSINESS_EMAIL`: only if the owner confirms an email address.
+- `BUSINESS_EMAIL`: configured as `maakaana.agencies@gmail.com`.
 - `BUSINESS_ADDRESS`: replace with the exact owner-confirmed address if available.
 - `MAP_QUERY`: update to the confirmed map listing/place if the current search does not locate the correct pin.
 - Business hours, route coverage, delivery timelines, pricing, fleet, and service promises should only be added after the owner confirms them.

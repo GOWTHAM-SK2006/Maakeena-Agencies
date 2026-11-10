@@ -11,7 +11,7 @@ import "./styles.css";
 // Add the verified business phone number here in international format.
 // Example: "+919876543210". Leave empty until the owner confirms the number.
 const BUSINESS_PHONE = "";
-const BUSINESS_EMAIL = ""; // Add only after the owner confirms the email.
+const BUSINESS_EMAIL = "maakaana.agencies@gmail.com";
 const BUSINESS_LOCATION = "Pallapalayam, Coimbatore";
 const BUSINESS_COORDINATES = "10.998426,77.062728";
 const PLUS_CODE = "X3X7+93H Pallapalayam, Tamil Nadu";
@@ -216,15 +216,15 @@ function App() {
               <h2>Have goods<br/>to <em>move?</em></h2>
               <p>Tell Maakeenaa Agencies what you need. Contact details can be updated here once confirmed by the business owner.</p>
               <div className="contact-actions">
-                {phoneHref ? <a className="button button-orange" href={phoneHref}><Phone size={17}/> Call the business</a> : <a className="button button-orange" href="#contact-details"><Phone size={17}/> Phone number to be added</a>}
-                {whatsappHref ? <a className="button button-outline-light" href={whatsappHref} target="_blank" rel="noreferrer"><Send size={16}/> WhatsApp</a> : <a className="button button-outline-light" href="#contact-details"><Send size={16}/> WhatsApp setup pending</a>}
+                {phoneHref ? <a className="button button-orange" href={phoneHref}><Phone size={17}/> Call the business</a> : <a className="button button-orange" href={`mailto:${BUSINESS_EMAIL}`}><Send size={17}/> Email the business</a>}
+                {whatsappHref ? <a className="button button-outline-light" href={whatsappHref} target="_blank" rel="noreferrer"><Send size={16}/> WhatsApp</a> : <a className="button button-outline-light" href={`mailto:${BUSINESS_EMAIL}`}><Send size={16}/> {BUSINESS_EMAIL}</a>}
               </div>
             </div>
             <div className="contact-details stagger" id="contact-details">
               <div className="contact-detail"><span className="detail-icon"><MapPin size={19}/></span><div><small>VISIT OUR LOCATION</small><strong>Pallapalayam, Coimbatore</strong><span className="detail-muted">Near Bypass Road ({PLUS_CODE})</span><a href={MAPS_URL} target="_blank" rel="noreferrer">Open in Google Maps <ArrowUpRight size={14}/></a></div></div>
               <div className="contact-detail"><span className="detail-icon"><Phone size={19}/></span><div><small>PHONE</small><strong>{BUSINESS_PHONE || "To be confirmed"}</strong><span className="detail-muted">{BUSINESS_PHONE ? "Call for service enquiries" : "Add the owner's verified business number"}</span></div></div>
               <div className="contact-detail"><span className="detail-icon"><Clock3 size={19}/></span><div><small>BUSINESS HOURS</small><strong>To be confirmed</strong><span className="detail-muted">Please contact the business before visiting</span></div></div>
-              <div className="contact-detail"><span className="detail-icon"><Send size={19}/></span><div><small>EMAIL</small><strong>{BUSINESS_EMAIL || "To be confirmed"}</strong><span className="detail-muted">Email address not yet provided</span></div></div>
+              <div className="contact-detail"><span className="detail-icon"><Send size={19}/></span><div><small>EMAIL</small><strong>{BUSINESS_EMAIL}</strong><a href={`mailto:${BUSINESS_EMAIL}`}>Send an email <ArrowUpRight size={14}/></a></div></div>
             </div>
           </div>
           <div className="contact-map">
@@ -243,7 +243,7 @@ function App() {
         <div className="container footer-bottom"><span>© {new Date().getFullYear()} Maakeenaa Agencies. All rights reserved.</span><span>Designed for clear connections.</span></div>
       </footer>
 
-      <a className="floating-contact" href={whatsappHref || "#contact"} target={whatsappHref ? "_blank" : undefined} rel={whatsappHref ? "noreferrer" : undefined} aria-label="Contact Maakeenaa Agencies"><Send size={20}/></a>
+      <a className="floating-contact" href={whatsappHref || `mailto:${BUSINESS_EMAIL}`} target={whatsappHref ? "_blank" : undefined} rel={whatsappHref ? "noreferrer" : undefined} aria-label="Contact Maakeenaa Agencies"><Send size={20}/></a>
     </div>
   );
 }
