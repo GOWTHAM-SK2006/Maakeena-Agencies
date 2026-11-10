@@ -30,7 +30,7 @@ Open `src/main.jsx` and update:
 
 - Business name: Maakeenaa Agencies
 - Business categories from the supplied listing: Domestic Transporters and Courier Services
-- Locality: Edayapalayam, Coimbatore
+- Locality: Pallapalayam, Coimbatore (Coordinates: 10°59'54.3"N 77°03'45.8"E / 10.998426, 77.062728, Plus Code: X3X7+93H)
 - Listing rating supplied by the user: 4.1 / 5 from 29 ratings (not displayed as a website testimonial)
 
 Exact street address, phone, email, operating hours, routes and pricing are not hard-coded because they have not been confirmed in the project brief.

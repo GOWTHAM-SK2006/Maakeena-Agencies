@@ -12,8 +12,12 @@ import "./styles.css";
 // Example: "+919876543210". Leave empty until the owner confirms the number.
 const BUSINESS_PHONE = "";
 const BUSINESS_EMAIL = ""; // Add only after the owner confirms the email.
-const BUSINESS_ADDRESS = "Edayapalayam, Coimbatore, Tamil Nadu, India";
-const MAP_QUERY = "Maakeenaa Agencies, Edayapalayam, Coimbatore";
+const BUSINESS_LOCATION = "Pallapalayam, Coimbatore";
+const BUSINESS_COORDINATES = "10.998426,77.062728";
+const PLUS_CODE = "X3X7+93H Pallapalayam, Tamil Nadu";
+const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${BUSINESS_COORDINATES}`;
+const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${BUSINESS_COORDINATES}`;
+const MAP_EMBED_URL = `https://www.google.com/maps?q=${BUSINESS_COORDINATES}&hl=en&z=16&output=embed`;
 
 const phoneHref = BUSINESS_PHONE ? `tel:${BUSINESS_PHONE}` : "";
 const whatsappHref = BUSINESS_PHONE
@@ -63,7 +67,7 @@ function App() {
       <div className="scroll-progress" aria-hidden="true"><i /><Truck size={18} /></div>
       <div className="topbar">
         <div className="container topbar-inner">
-          <span><MapPin size={13} /> Edayapalayam, Coimbatore</span>
+          <span><MapPin size={13} /> Pallapalayam, Coimbatore</span>
           <span className="topbar-right"><span className="status-dot" /> Local transport & courier enquiries</span>
         </div>
       </div>
@@ -99,7 +103,7 @@ function App() {
               </div>
               <div className="hero-proof">
                 <div className="proof-icon"><MapPin size={17}/></div>
-                <div><strong>Based in Edayapalayam</strong><span>Serving customers from Coimbatore</span></div>
+                <div><strong>Based in Pallapalayam</strong><span>Serving customers from Coimbatore</span></div>
               </div>
             </div>
             <div className="hero-visual reveal-right">
@@ -122,13 +126,13 @@ function App() {
         <section className="intro-strip">
           <div className="container intro-inner">
             <p>Every consignment has a destination.<br/><strong>Let’s help you take the next step.</strong></p>
-            <div className="intro-location"><MapPin size={19}/><span><small>FIND US IN</small><strong>Edayapalayam, Coimbatore</strong></span></div>
+            <div className="intro-location"><MapPin size={19}/><span><small>FIND US IN</small><strong>Pallapalayam, Coimbatore</strong></span></div>
           </div>
         </section>
 
         <section className="motion-strip" aria-label="Service highlights">
           <div className="motion-track">
-            {["DOMESTIC TRANSPORT", "COURIER SERVICES", "EDAYAPALAYAM · COIMBATORE", "DOMESTIC TRANSPORT", "COURIER SERVICES", "EDAYAPALAYAM · COIMBATORE"].map((item, i) => <span key={i}>{item}<i>✳</i></span>)}
+            {["DOMESTIC TRANSPORT", "COURIER SERVICES", "PALLAPALAYAM · COIMBATORE", "DOMESTIC TRANSPORT", "COURIER SERVICES", "PALLAPALAYAM · COIMBATORE"].map((item, i) => <span key={i}>{item}<i>✳</i></span>)}
           </div>
         </section>
 
@@ -161,10 +165,10 @@ function App() {
             <div className="about-copy reveal-right">
               <div className="eyebrow"><span className="eyebrow-line"></span> ABOUT MAAKEENAA AGENCIES</div>
               <h2>A local point of contact for <em>moving goods.</em></h2>
-              <p className="about-lede">Maakeenaa Agencies is listed in Edayapalayam, Coimbatore, under domestic transporters and courier services.</p>
+              <p className="about-lede">Maakeenaa Agencies is located in Pallapalayam, Coimbatore, under domestic transporters and courier services.</p>
               <p>Whether you are exploring a domestic transport requirement or need information about courier services, reach out to discuss your needs and confirm the details directly with the team.</p>
               <div className="about-points stagger">
-                <div><span><MapPin size={17}/></span><p><strong>Local presence</strong><small>Located in Edayapalayam, Coimbatore</small></p></div>
+                <div><span><MapPin size={17}/></span><p><strong>Local presence</strong><small>Located in Pallapalayam, Coimbatore</small></p></div>
                 <div><span><Package size={17}/></span><p><strong>Service enquiries</strong><small>Domestic transportation and courier services</small></p></div>
               </div>
               <a href="#contact" className="button button-dark">Contact the team <ArrowUpRight size={17}/></a>
@@ -182,7 +186,7 @@ function App() {
             </div>
             <div className="why-list stagger">
               <div className="why-item"><span>01</span><div><ShieldCheck size={22}/><h3>Speak directly</h3><p>Discuss your shipment needs with the business before making arrangements.</p></div></div>
-              <div className="why-item"><span>02</span><div><MapPin size={22}/><h3>Local presence</h3><p>Find the business in Edayapalayam, Coimbatore.</p></div></div>
+              <div className="why-item"><span>02</span><div><MapPin size={22}/><h3>Local presence</h3><p>Find the business in Pallapalayam, Coimbatore.</p></div></div>
               <div className="why-item"><span>03</span><div><Zap size={22}/><h3>Clear next steps</h3><p>Ask about service availability, charges, timelines and destination coverage.</p></div></div>
             </div>
           </div>
@@ -194,7 +198,7 @@ function App() {
             <div className="faq-list stagger">
               {[
                 ["What services does Maakeenaa Agencies offer?", "The business is listed under Domestic Transporters and Courier Services. Contact the team to confirm the exact services available."],
-                ["Where is Maakeenaa Agencies located?", "The listing places the business in Edayapalayam, Coimbatore. Please confirm the exact street address and directions before visiting."],
+                ["Where is Maakeenaa Agencies located?", "The business is located in Pallapalayam, Coimbatore (Coordinates: 10°59'54.3\"N 77°03'45.8\"E / Plus Code: X3X7+93H). Use the map below for live directions."],
                 ["How can I ask about transport charges?", "Use the contact section to call or message the business once the verified phone number has been added to this website."],
                 ["Which locations and routes are covered?", "Route coverage, delivery timelines and availability have not been confirmed. Please check these details directly with the business."]
               ].map(([q,a],i) => <div className={`faq-item ${faqOpen===i?"faq-active":""}`} key={q}>
@@ -217,15 +221,15 @@ function App() {
               </div>
             </div>
             <div className="contact-details stagger" id="contact-details">
-              <div className="contact-detail"><span className="detail-icon"><MapPin size={19}/></span><div><small>VISIT OUR LOCATION</small><strong>Edayapalayam, Coimbatore</strong><a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`} target="_blank" rel="noreferrer">Open in Google Maps <ArrowUpRight size={14}/></a></div></div>
+              <div className="contact-detail"><span className="detail-icon"><MapPin size={19}/></span><div><small>VISIT OUR LOCATION</small><strong>Pallapalayam, Coimbatore</strong><span className="detail-muted">Near Bypass Road ({PLUS_CODE})</span><a href={MAPS_URL} target="_blank" rel="noreferrer">Open in Google Maps <ArrowUpRight size={14}/></a></div></div>
               <div className="contact-detail"><span className="detail-icon"><Phone size={19}/></span><div><small>PHONE</small><strong>{BUSINESS_PHONE || "To be confirmed"}</strong><span className="detail-muted">{BUSINESS_PHONE ? "Call for service enquiries" : "Add the owner's verified business number"}</span></div></div>
               <div className="contact-detail"><span className="detail-icon"><Clock3 size={19}/></span><div><small>BUSINESS HOURS</small><strong>To be confirmed</strong><span className="detail-muted">Please contact the business before visiting</span></div></div>
               <div className="contact-detail"><span className="detail-icon"><Send size={19}/></span><div><small>EMAIL</small><strong>{BUSINESS_EMAIL || "To be confirmed"}</strong><span className="detail-muted">Email address not yet provided</span></div></div>
             </div>
           </div>
           <div className="contact-map">
-            <iframe title="Map showing Edayapalayam, Coimbatore" src={`https://www.google.com/maps?q=${encodeURIComponent(BUSINESS_ADDRESS)}&output=embed`} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-            <div className="map-card"><span className="map-pin"><MapPin size={18}/></span><div><small>FIND MAAKEENAA AGENCIES</small><strong>Edayapalayam, Coimbatore</strong><a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`} target="_blank" rel="noreferrer">Get directions <ArrowUpRight size={14}/></a></div></div>
+            <iframe title="Map showing Maakeenaa Agencies in Pallapalayam, Coimbatore" src={MAP_EMBED_URL} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <div className="map-card"><span className="map-pin"><MapPin size={18}/></span><div><small>FIND MAAKEENAA AGENCIES</small><strong>Pallapalayam, Coimbatore</strong><a href={DIRECTIONS_URL} target="_blank" rel="noreferrer">Get directions <ArrowUpRight size={14}/></a></div></div>
           </div>
         </section>
       </main>
@@ -233,7 +237,7 @@ function App() {
       <footer className="footer">
         <div className="container footer-top">
           <a href="#home" className="brand footer-brand"><span className="brand-mark"><Truck size={22}/></span><span className="brand-copy"><strong>MAAKEENAA</strong><small>AGENCIES</small></span></a>
-          <p>Domestic transportation & courier service enquiries<br/>Edayapalayam, Coimbatore</p>
+          <p>Domestic transportation & courier service enquiries<br/>Pallapalayam, Coimbatore</p>
           <a href="#home" className="back-top">BACK TO TOP <ArrowUpRight size={15}/></a>
         </div>
         <div className="container footer-bottom"><span>© {new Date().getFullYear()} Maakeenaa Agencies. All rights reserved.</span><span>Designed for clear connections.</span></div>
