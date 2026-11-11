@@ -91,7 +91,7 @@ function App() {
           <a href="#home" className="brand" aria-label="Maakeenaa Agencies home" onClick={closeMenu}>
             <span className="brand-mark"><Truck size={22} strokeWidth={2.2} /></span>
             <span className="brand-copy">
-              <strong>MAAKEENAA</strong>
+              <strong>MAAKEENAA AGENCIES</strong>
               <small>MAHINDRA LOGISTICS PARTNER</small>
             </span>
           </a>
@@ -111,8 +111,9 @@ function App() {
           <div className="hero-grid"></div>
           <div className="container hero-content">
             <div className="hero-copy reveal-left">
-              <div className="eyebrow eyebrow-light"><span className="eyebrow-line"></span> YOUR TRUSTED LOGISTICS PARTNER</div>
-              <h1 aria-label="Your Trusted Logistics Partner."><Split text="Your Trusted" /><br/><Split text="Logistics" base={2} /> <em><Split text="Partner." base={3} /></em></h1>
+              <div className="eyebrow eyebrow-light"><span className="eyebrow-line"></span> OFFICIAL LOGISTICS & TRANSPORTATION WEBSITE</div>
+              <h1 aria-label="Maakeenaa Agencies"><Split text="Maakeenaa" /><br/><em><Split text="Agencies" base={1} /></em></h1>
+              <p className="hero-tagline" style={{ color: "var(--orange)", fontWeight: 700, fontSize: "17px", margin: "-6px 0 16px", letterSpacing: "-0.01em" }}>Your trusted logistics and transportation partner.</p>
               <p className="hero-lede">All India logistics and transport services by <strong>Maakeenaa Agencies</strong> in partnership with <strong>Mahindra Logistics & Rivigo</strong>. Door-to-door delivery, parcel pickup, PTL, Express Surface & Air across 19,000+ pin codes.</p>
               <div className="hero-actions">
                 <a href="#contact" className="button button-orange">Book a shipment <ArrowUpRight size={17}/></a>
@@ -257,7 +258,7 @@ function App() {
 
       <footer className="footer">
         <div className="container footer-top">
-          <a href="#home" className="brand footer-brand"><span className="brand-mark"><Truck size={22}/></span><span className="brand-copy"><strong>MAAKEENAA</strong><small>MAHINDRA LOGISTICS PARTNER</small></span></a>
+          <a href="#home" className="brand footer-brand"><span className="brand-mark"><Truck size={22}/></span><span className="brand-copy"><strong>MAAKEENAA AGENCIES</strong><small>MAHINDRA LOGISTICS PARTNER</small></span></a>
           <p>Your Trusted Logistics Partner · Mahindra Logistics & Rivigo<br/>{FULL_ADDRESS}<br/>D. Vadivel: {BUSINESS_PHONE_1_DISPLAY} | {BUSINESS_PHONE_2_DISPLAY}</p>
           <a href="#home" className="back-top">BACK TO TOP <ArrowUpRight size={15}/></a>
         </div>
