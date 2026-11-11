@@ -258,19 +258,24 @@ export default function App() {
               <span className="pulse-dot"></span>
             </span>
             <span className="banner-text">
-              <strong>Hub Operations Active (24/7):</strong> {SHORT_ADDRESS}
+              <strong className="status-label">Hub Operations Active (24/7):</strong>
+              <strong className="status-label-mobile">Operations Active 24/7</strong>
+              <span className="location-label"> {SHORT_ADDRESS}</span>
+              <span className="location-label-mobile">Coimbatore Hub</span>
             </span>
           </div>
           <div className="banner-right">
             <span className="partner-chip">
-              <ShieldCheck size={14} className="chip-icon" /> Partner of Mahindra Logistics & Rivigo
+              <ShieldCheck size={14} className="chip-icon" />
+              <span className="partner-text-desktop">Partner of Mahindra Logistics & Rivigo</span>
+              <span className="partner-text-mobile">Mahindra Logistics Partner</span>
             </span>
             <span className="banner-divider">|</span>
-            <a href={phoneHref1} className="banner-phone">
+            <a href={phoneHref1} className="banner-phone primary-phone">
               <Phone size={13} /> {BUSINESS_PHONE_1_DISPLAY}
             </a>
-            <span className="banner-divider">|</span>
-            <a href={phoneHref2} className="banner-phone">
+            <span className="banner-divider secondary-divider">|</span>
+            <a href={phoneHref2} className="banner-phone secondary-phone">
               <Phone size={13} /> {BUSINESS_PHONE_2_DISPLAY}
             </a>
           </div>
