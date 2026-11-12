@@ -933,3 +933,4 @@ export const translations = {
     floatingWhatsAppText: "വാട്ട്‌സ്ആപ്പ്",
   },
 };
+

@@ -129,16 +129,25 @@ export default function App() {
     setLangOpen(false);
   };
 
-  // Close language dropdown on click outside
+  // Close language dropdown on click outside or on scroll
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (langDropdownRef.current && !langDropdownRef.current.contains(e.target)) {
         setLangOpen(false);
       }
     };
+    const handleScroll = () => {
+      if (langOpen) {
+        setLangOpen(false);
+      }
+    };
     document.addEventListener("mousedown", handleOutsideClick);
-    return () => document.removeEventListener("mousedown", handleOutsideClick);
-  }, []);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [langOpen]);
 
   // Prevent background body scroll when mobile menu is open
   useEffect(() => {
